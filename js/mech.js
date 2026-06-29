@@ -19,7 +19,7 @@ class Mech {
         
         this.maxHp = stats.hp;
         this.hp = stats.hp;
-        this.attack = stats.attack;
+        this.attackPower = stats.attack;
         this.defense = stats.defense;
         this.speed = stats.speed;
         this.attackCooldown = stats.attackCooldown;
@@ -133,7 +133,7 @@ class Mech {
         const targetBox = target.getHitbox();
         
         if (this.boxCollision(attackBox, targetBox)) {
-            target.takeDamage(this.attack, this.isDefending ? this.defendReduction : 0);
+            target.takeDamage(this.attackPower, this.isDefending ? this.defendReduction : 0);
         }
     }
 
